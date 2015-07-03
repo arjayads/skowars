@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'main/index'
   get '/signup/:type', to: 'signup#index', as: 'signup'
+  post '/signup', to: 'signup#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
