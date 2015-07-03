@@ -4,8 +4,10 @@
       <div class="col-md-4">
       </div>
       <div class="col-md-4">
-        <div class="row"><div class="col-md-12"><h1>Signup as <%= @type  %></h1></div></div>
-        <div class="row"><div class="alert alert-danger" ><%= @member.errors.full_messages %></div></div>
+        <div class="row"><div class="col-md-12"><h1>Signup as <%= @member.category  %></h1></div></div>
+        <% if @member.errors.count > 0 %>
+            <div class="row"><div class="alert alert-danger" ><%= @member.errors.full_messages %></div></div>
+        <% end %>
         <%= form_tag('/signup', authenticity_token: true) %>
           <input type="hidden" name="member[category]" value="<%= @member.category %>">
           <div class="form-group">

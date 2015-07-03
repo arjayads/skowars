@@ -2,8 +2,7 @@ class SignupController < ApplicationController
 
   def index
     types = {skowar: "Skowar", sponsor: "Sponsor"}
-    @type = types[params[:type].to_sym]
-    if !@type
+    if !types[params[:type].to_sym]
       redirect_to root_path
     end
     @member = Member.new(category: params[:type])
