@@ -9,7 +9,7 @@
             <div class="row">
               <div class="alert alert-danger" >
                   <ul>
-                  <% @errors.each do |msg| %>
+                  <% @member.errors.full_messages.each do |msg| %>
                       <li><%= msg %></li>
                   <% end %>
                   </ul>
@@ -32,11 +32,11 @@
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="member[password]"  placeholder="Password">
+            <input type="password" class="form-control" id="password" name="member[password]"  value="<%= @member.password %>" placeholder="Password">
           </div>
           <div class="form-group">
             <label for="confirm_password">Confirm Password</label>
-            <input type="password" class="form-control" id="confirm_password" name="member[password_confirmation]"  placeholder="Confirm password">
+            <input type="password" class="form-control" id="confirm_password" name="member[password_confirmation]"  value="<%= @member.password_confirmation %>" placeholder="Confirm password">
           </div>
         <div class="form-group">
           <%= radio_button_tag 'member[gender]', "Female", @member.gender == "Female" %><label style="margin-right: 20px; cursor: pointer" for="member_gender_Female">&nbsp;&nbsp;Female</label>

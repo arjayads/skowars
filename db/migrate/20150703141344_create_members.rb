@@ -10,11 +10,13 @@ class CreateMembers < ActiveRecord::Migration
       t.string :email, null: false
       t.string :username
       t.string :password_digest, null: false
-      t.string :activation_code
+      t.string :activation_digest
+      t.string :remember_digest
+      t.datetime :activated_at
       t.boolean :is_active, null: false, default: false
       t.date :dob
       t.column :category, :membership_type, null:false
-      t.column :gender, :gender, null:false
+      t.column :gender, :gender
       t.timestamps null: false
     end
   end

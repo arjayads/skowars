@@ -10,18 +10,17 @@ class SignupController < ApplicationController
   end
 
   def create
-    logger.info params
     @member = Member.new(member_params)
     if @member.save
+      @member.send_activation_email
       redirect_to root_path
     else
-      @errors = @member.errors.full_messages.uniq
       render :action => 'index'
     end
   end
 
   private
   def member_params
-    params.require(:member).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category, :gender)
+    params.require(:member).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category)
   end
 end
