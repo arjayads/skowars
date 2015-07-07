@@ -21,6 +21,6 @@ class SignupController < ApplicationController
 
   private
   def member_params
-    params.require(:member).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category)
+    params.require(:member).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category, :gender)
   end
 end
