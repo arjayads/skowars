@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  attr_accessor :remember_token, :activation_token, :reset_token
+  attr_accessor :remember_token, :activation_token, :reset_token, :gender
   before_create :create_activation_digest
 
   has_secure_password
