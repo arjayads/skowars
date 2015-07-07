@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  get 'main/index'
-  get '/signup/:type', to: 'signup#index', as: 'signup'
-  post '/signup', to: 'signup#create'
+  root 'static_pages#index'
+  get '/reset' => 'sessions#reset'
+
+  get '/activation_result' => 'static_pages#activation_result', as: :activation_result
+
+  get '/signup/:type' => 'signup#index', as: :signup
+  post '/signup' => 'signup#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'main#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

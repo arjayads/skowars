@@ -19,7 +19,7 @@
         <%= form_tag('/signup', authenticity_token: true) %>
           <input type="hidden" name="member[category]" value="<%= @member.category %>">
           <div class="form-group">
-            <label for="first_name">First name</label>
+            <label for="first_name">First name <%= @member.category == 'Sponsor' ? '/ Organization name' : '' %></label>
             <input type="text" class="form-control" id="first_name" name="member[first_name]" value="<%= @member.first_name %>" placeholder="First name">
           </div>
           <div class="form-group">
