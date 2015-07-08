@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
 
-  get '/logout' => 'sessions#logout'
+  get '/logout' => 'sessions#logout', as: :logout
   get '/signin' => 'sessions#signin', as: :signin
   post '/signin' => 'sessions#create'
 
