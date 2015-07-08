@@ -1,6 +1,9 @@
-class SignupController < ApplicationController
+class MemberController < ApplicationController
 
   def index
+  end
+
+  def new
     cats = {skowar: "Skowar", sponsor: "Sponsor"}
     param_cat = cats[params[:type].to_sym]
     if !param_cat
@@ -13,9 +16,10 @@ class SignupController < ApplicationController
     @member = Member.new(member_params)
     if @member.save
       @member.send_activation_email
-      redirect_to root_path
+      flash[:success] = true
+      redirect_to after_signup_path
     else
-      render :action => 'index'
+      render :action => 'new'
     end
   end
 

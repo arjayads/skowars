@@ -16,7 +16,7 @@
               </div>
             </div>
         <% end %>
-        <%= form_tag('/signup', authenticity_token: true) %>
+        <%= form_tag('/member', authenticity_token: true) %>
           <input type="hidden" name="member[category]" value="<%= @member.category %>">
           <div class="form-group">
             <label for="first_name">First name <%= @member.category == 'Sponsor' ? '/ Organization name' : '' %></label>

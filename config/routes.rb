@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
-  get '/reset' => 'sessions#reset'
+
+  get '/logout' => 'sessions#logout'
+  get '/signin' => 'sessions#signin', as: :signin
+  post '/signin' => 'sessions#create'
 
   get '/activation_result' => 'static_pages#activation_result', as: :activation_result
+  get '/after-signup' => 'static_pages#after_signup', as: :after_signup
 
-  get '/signup/:type' => 'signup#index', as: :signup
-  post '/signup' => 'signup#create'
+  get '/member/:type' => 'member#new', as: :member
+  post '/member' => 'member#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
