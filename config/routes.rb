@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get '/activation_result' => 'static_pages#activation_result', as: :activation_result
   get '/after-signup' => 'static_pages#after_signup', as: :after_signup
 
-  get '/member/:type' => 'member#new', as: :member
+  get '/member/profile' => 'member#show', as: :member_profile
+  get '/member/:type' => 'member#new', as: :new_member
   post '/member' => 'member#create'
 
   # The priority is based upon order of creation: first created -> highest priority.

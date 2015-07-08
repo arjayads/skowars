@@ -3,7 +3,16 @@ class MemberController < ApplicationController
   def index
   end
 
+  def show
+    if !logged_in?
+      redirect_to signin_path
+    end
+  end
+
   def new
+    if logged_in?
+      redirect_to member_profile_path
+    end
     cats = {skowar: "Skowar", sponsor: "Sponsor"}
     param_cat = cats[params[:type].to_sym]
     if !param_cat
