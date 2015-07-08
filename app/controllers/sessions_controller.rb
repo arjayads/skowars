@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
   end
 
   def signin
+    if logged_in?
+      redirect_to member_profile_path
+    end
   end
 
   def create
@@ -18,4 +21,5 @@ class SessionsController < ApplicationController
       render 'signin'
     end
   end
+
 end

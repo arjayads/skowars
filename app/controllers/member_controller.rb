@@ -1,4 +1,5 @@
 class MemberController < ApplicationController
+  before_action :logged_in_user, only: [:new]
 
   def index
   end
@@ -10,9 +11,6 @@ class MemberController < ApplicationController
   end
 
   def new
-    if logged_in?
-      redirect_to member_profile_path
-    end
     cats = {skowar: "Skowar", sponsor: "Sponsor"}
     param_cat = cats[params[:type].to_sym]
     if !param_cat
@@ -35,5 +33,12 @@ class MemberController < ApplicationController
   private
   def member_params
     params.require(:member).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category, :gender)
+  end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    if logged_in?
+      redirect_to member_profile_path
+    end
   end
 end
