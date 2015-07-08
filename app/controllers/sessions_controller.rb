@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
   def logout
-    reset_session
-    redirect_to root_path
+    log_out if logged_in?
+    redirect_to root_url
   end
 
   def signin
