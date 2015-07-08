@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def index
-    if session[:user_id]
+    if logged_in?
       redirect_to member_profile_path
     end
   end

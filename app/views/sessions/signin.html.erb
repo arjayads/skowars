@@ -21,6 +21,9 @@
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" name="session[password]"  placeholder="Password">
         </div>
+        <div class="form-group">
+          <%= check_box_tag 'session[remember_me]', '1' %><label style="margin-right: 20px; cursor: pointer" for="session_remember_me">&nbsp;&nbsp;Remember me on this computer</label>
+        </div>
         <button type="submit" class="btn btn-default">
           Submit
         </button>
