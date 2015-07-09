@@ -45,6 +45,8 @@ class PasswordResetsController < ApplicationController
 
   def get_user
     @user = Member.find_by(email: params[:email])
+    logger.debug @user.is_active?
+    logger.debug @user.authenticated?(:reset, params[:id])
   end
 
   # Confirms a valid user.
