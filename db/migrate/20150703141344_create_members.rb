@@ -12,6 +12,8 @@ class CreateMembers < ActiveRecord::Migration
       t.string :password_digest, null: false
       t.string :activation_digest
       t.string :remember_digest
+      t.string :reset_digest
+      t.datetime :reset_sent_at
       t.datetime :activated_at
       t.boolean :is_active, null: false, default: false
       t.date :dob

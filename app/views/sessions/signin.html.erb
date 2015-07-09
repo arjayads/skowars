@@ -1,3 +1,4 @@
+<% provide(:title, 'Sign-in') %>
 <div class="row">
   <div class="col-md-12">
     <div class="row">
@@ -18,15 +19,14 @@
           <input type="email" class="form-control" id="email" name="session[email]" placeholder="Email">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Password</label>&nbsp;&nbsp;<%= link_to '(forgot password)', password_resets_new_path %>
           <input type="password" class="form-control" id="password" name="session[password]"  placeholder="Password">
         </div>
         <div class="form-group">
           <%= check_box_tag 'session[remember_me]', '1' %><label style="margin-right: 20px; cursor: pointer" for="session_remember_me">&nbsp;&nbsp;Remember me on this computer</label>
         </div>
-        <button type="submit" class="btn btn-default">
-          Submit
-        </button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <%= link_to 'Home', root_path %>
         </form>
       </div>
       <div class="col-md-4">
