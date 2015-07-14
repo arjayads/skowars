@@ -1,28 +1,19 @@
 <% provide(:title, 'Home') %>
-<div class="row">
-<div class="col-md-12">
-  <div class="row">
-    <div class="col-md-12">
-      <h2 class="text-center">
-        Welcome to Skowar!
-      </h2>
-      <h3 class="text-center">
-        Explore opportunities by signing up
-      </h3>
-      <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-          <%= link_to 'I want to sponsor', new_member_path(:type => "sponsor"), class: "btn btn-success btn-lg btn-block" %>
-          <%= link_to 'I want to be a skowar', new_member_path(:type => "skowar"), class: "btn btn-primary btn-lg btn-block" %>
-        </div>
+
+<header class="hero text-center">
+  <div class="container">
+
+    <div class="hero--info">
+      <div class="hero-header">
+        <h1 class="hero--info__header">Skowars is All You Need</h1>
+        <p class="lead">Need a sponsor for your education?</p>
       </div>
-      <div class="row">
-        <div class="col-md-12" style="text-align: center">
-          <%= link_to 'Sign-in', signin_path%>
-        </div>
-      </div>
+
+      <ul class="list-inline">
+        <li><%= link_to 'I want to sponsor', new_member_path(:type => "sponsor"), class: "btn" %></li>
+        <li><%= link_to 'I want to be a skowar', new_member_path(:type => "skowar"), class: "btn btn-secondary" %></li>
+      </ul>
+      <%= link_to 'Sign-in', signin_path, class: "btn-link" %>
     </div>
   </div>
-</div>
-</div>
+</header>

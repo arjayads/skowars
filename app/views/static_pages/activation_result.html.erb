@@ -1,12 +1,16 @@
 <% provide(:title, 'Activation') %>
-<% if flash[:success] %>
-    <div class="alert alert-success"><%= flash[:success] %></div>
-    <div><%= link_to 'Sign-in', signin_path %> </div>
-<% elsif flash[:danger] %>
-    <div class="alert alert-danger"><%= flash[:danger] %></div>
-    <div><%= link_to 'Home', root_path %> </div>
-<% else %>
-    <script type="text/javascript">
-        window.location.href="/"
-    </script>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <% if flash[:success] %>
+        <div class="alert alert-success"><%= flash[:success] %> &nbsp;<%= link_to 'Sign-in', signin_path %></div>
+    <% elsif flash[:danger] %>
+        <div class="alert alert-danger"><%= flash[:danger] %></div>
+    <% else %>
+        <script type="text/javascript">
+            window.location.href="/"
+        </script>
+    <% end %>
+  </div>
+</div>
+
