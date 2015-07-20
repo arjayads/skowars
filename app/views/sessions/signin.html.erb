@@ -6,6 +6,7 @@
       </div>
       <div class="col-md-4">
         <div class="row"><div class="col-md-12"><h1>Sign-in using your account</h1></div></div>
+        <%= form_tag('/signin', authenticity_token: true) %>
         <% if flash[:danger]  %>
             <div class="row">
               <div class="alert alert-danger" >
@@ -13,7 +14,6 @@
               </div>
             </div>
         <% end %>
-        <%= form_tag('/signin', authenticity_token: true) %>
         <div class="form-group">
           <label for="email">Email address</label>
           <input type="email" class="form-control" id="email" name="session[email]" placeholder="Email">
