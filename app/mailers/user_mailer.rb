@@ -5,6 +5,7 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.account_activation.subject
   #
   def account_activation(user)
+    user = Member.find_by(email: 'arjayads@gmail.com')
     @user = user
     mail to: user.email, subject: "Account activation"
   end
