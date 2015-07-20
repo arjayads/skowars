@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#signin', as: :signin
   post '/signin' => 'sessions#create'
 
+  get '/account_activations/:token/edit' => 'account_activations#edit'
   get '/activation_result' => 'static_pages#activation_result', as: :activation_result
   get '/after-signup' => 'static_pages#after_signup', as: :after_signup
 
@@ -29,8 +30,8 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :account_activations, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :account_activations, param: :token, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   # Example resource route with options:
   #   resources :products do
