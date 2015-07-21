@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#logout', as: :logout
   get '/signin' => 'sessions#signin', as: :signin
   post '/signin' => 'sessions#create'
- 
+
   get '/activation_result' => 'static_pages#activation_result', as: :activation_result
   get '/after-signup' => 'static_pages#after_signup', as: :after_signup
 
