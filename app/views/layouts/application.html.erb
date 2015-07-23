@@ -29,8 +29,10 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#find">Find Skowars</a></li>
+          <li><a href="#messages">Messages</a></li>
+          <li><a href="#notif">Notifications</a></li>
           <% if logged_in? %>
             <li><%= link_to 'Log out', logout_path, class: "btn-link" %></li>
           <% else %>
