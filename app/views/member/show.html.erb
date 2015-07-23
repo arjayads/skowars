@@ -5,8 +5,108 @@
     <div class="alert alert-success"><%= flash[:success] %></div>
   <% elsif flash[:danger] %>
       <div class="alert alert-danger"><%= flash[:danger] %></div>
-  <%end %> 
-    <div>
-        <h2>Welcome!</h2>
+  <%end %>
+
+    <div class="row">
+      <div class="col-md-2">
+        <img alt="Profile pic" src="http://lorempixel.com/140/140/" class="img-thumbnail" />
+      </div>
+      <div class="col-md-4">
+        <h2 style="margin-top: 0; text-transform: capitalize"><%= current_user.first_name %></h2>
+        <p>Lives in Cebu City Philippines</p>
+        <span>100k friends | 23k views</span>
+        <p></p>
+      </div>
+      <div class="col-md-4">
+        <span id="my-quote"></span>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Activities</a>
+          </li>
+          <li>
+            <a href="#">Photos</a>
+          </li>
+          <li>
+            <a href="#">Documents</a>
+          </li>
+          <li>
+            <a href="#">Reviews</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-6">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Basic Information
+            </h3>
+          </div>
+          <div class="panel-body">
+            <i title="Edit" class="fa fa-pencil-square-o"></i>
+          </div>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Interests
+            </h3>
+          </div>
+          <div class="panel-body">
+            <i title="Edit" class="fa fa-pencil-square-o"></i>
+          </div>
+        </div>
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Contact Information
+            </h3>
+          </div>
+          <div class="panel-body">
+            <i title="Edit" class="fa fa-pencil-square-o"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Friends
+            </h3>
+          </div>
+          <div class="panel-body">
+            <i title="Edit" class="fa fa-search"></i>
+          </div>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              My Sponsors & Skowars
+            </h3>
+          </div>
+          <div class="panel-body">
+            <i title="Edit" class="fa fa-search"></i>
+          </div>
+        </div>
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              Spotlight
+            </h3>
+          </div>
+          <div class="panel-body">
+            <i title="Edit" class="fa fa-search"></i>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
+<script src="http://quotesondesign.com/api/3.0/api-3.0.js?id=my-quote" type="text/javascript" charset="utf-8"></script>
