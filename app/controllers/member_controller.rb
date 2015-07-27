@@ -30,6 +30,18 @@ class MemberController < ApplicationController
     end
   end
 
+  def change_profile_pic
+    img = params[:imageData].gsub('data:image/jpeg;base64,', '')
+    img = img.gsub(' ', '+')
+    img = Base64.decode64(img)
+    filename = 'uploads/' + Digest::MD5.hexdigest(img) + '.jpeg'
+
+    File.open(filename, 'wb') do|f|
+      f.write(img)
+    end
+    render :text => filename
+  end
+
   private
   def member_params
     params.require(:member).permit(:first_name, :last_name, :email, :password, :password_confirmation, :category, :gender)

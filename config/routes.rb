@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/member/profile' => 'member#show', as: :member_profile
   get '/member/:type' => 'member#new', as: :new_member
   post '/member' => 'member#create'
+  post '/member/change-profile-pic' => 'member#change_profile_pic'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

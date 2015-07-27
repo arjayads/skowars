@@ -309,8 +309,19 @@
                 canvasData = $image.cropper('getCanvasData');
                 var imageData = $image.cropper("getDataURL", "image/jpeg");
 
-                $profpic.attr("src", '/assets/chilli.jpg');
-                $image.cropper('destroy');
+                var AUTH_TOKEN = $('meta[name=csrf-token]').attr('content');
+
+                $.ajax('/member/change-profile-pic', {
+                    method: "POST",
+                    data: {"imageData": imageData, "authenticity_token": AUTH_TOKEN},
+                    success: function (o) {
+
+                        $image.cropper('destroy');
+                    },
+                    error: function () {
+                        console.log('Upload error');
+                    }
+                });
             });
 
             // Import image
